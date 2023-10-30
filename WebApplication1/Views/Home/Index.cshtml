@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<h2>
+    @TempData["company"]
+</h2>
+
+
+<h3>
+    @ViewData["message"]
+    @ViewBag.message
+   
+    
+    @* meassage is key of viewdata but viewbag is also acessible *@
+    @* viewdata and viewbag can acess each other data interchanglebly *@
+
+
+</h3>
+@if (ViewData["list"] != null)
+{
+    <ol>
+        @foreach (string str in (IEnumerable<string>)ViewData["list"])
+        {
+            <li>
+                @str
+            </li>
+        }
+    </ol>
+}
+
+
+<h3>
+    @ViewData["message2"]
+</h3>
+@if (ViewData["list2"] != null)
+{
+    <ol>
+        @foreach (string str1 in (IEnumerable<string>)ViewData["list2"])
+        {
+            <li>
+                @str1
+            </li>
+        }
+    </ol>
+}
+
+
+
+<p>@ViewBag.Month, @ViewBag.Year ,@ViewBag.Name</p>
+<ol>
+    @foreach(string str in @ViewBag.names)
+    {
+       <li>
+            @str
+       </li>
+             
+    }
+
+</ol>
+
+
